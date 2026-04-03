@@ -1,0 +1,10 @@
+$schema: https://github.com/jin-gizmo/req/releases/latest/download/req.schema.yaml
+
+name: install-recheck
+description: Install ok with recheck still failing
+
+require:
+  - name: install-recheck
+    description: Install ok with recheck still failing
+    check: "false"
+    install: "true"

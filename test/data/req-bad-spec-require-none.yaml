@@ -1,0 +1,6 @@
+$schema: https://github.com/jin-gizmo/req/releases/latest/download/req.schema.yaml
+
+name: bad-spec-require-none
+description: Require key is empty list
+
+require: []

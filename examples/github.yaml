@@ -1,0 +1,24 @@
+$schema: https://github.com/jin-gizmo/req/releases/latest/download/req.schema.yaml
+
+name: github
+description: GitHub CLO
+
+require:
+  - name: gh
+    description: GitHub CLI
+    check: req_has_command gh
+    install: |
+      case "$REQ_OS"
+      in
+        darwin)
+                brew install gh
+                ;;
+        linux)
+                echo "See https://github.com/cli/cli?tab=readme-ov-file#linux--unix"
+                exit 126
+                ;;
+        *)
+                echo "Don't know how to install gh on ${REQ_OS}. You're on your own, sorry."
+                exit 1
+                ;;
+      esac

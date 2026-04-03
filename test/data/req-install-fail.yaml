@@ -1,0 +1,12 @@
+$schema: https://github.com/jin-gizmo/req/releases/latest/download/req.schema.yaml
+
+name: install-fail
+description: Install fail
+
+require:
+  - name: install-fail
+    description: Install fail
+    check: "false"
+    install: |
+      echo Whoops
+      exit 1

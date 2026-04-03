@@ -1,0 +1,17 @@
+$schema: https://github.com/jin-gizmo/req/releases/latest/download/req.schema.yaml
+
+name: fail-fast
+description: First requirement fails.
+
+require:
+  - name: no-exist
+    description: Fails check
+    check: "false"
+    install: "false"
+
+  - name: bash
+    description: bash
+    check: req_has_command bash
+    install: |
+      echo "This is very surprising"
+      exit 126

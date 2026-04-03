@@ -1,0 +1,11 @@
+$schema: https://github.com/jin-gizmo/req/releases/latest/download/req.schema.yaml
+
+name: optional-no-exist
+description: Optional requirement that does not exist
+
+require:
+  - name: optional-no-exist
+    description: Optional requirement that does not exist
+    optional: true
+    check: "false"
+    install: "false"

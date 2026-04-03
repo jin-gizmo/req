@@ -1,0 +1,11 @@
+$schema: https://github.com/jin-gizmo/req/releases/latest/download/req.schema.yaml
+
+name: bad-spec-require-type
+description: Require key is not a list
+
+require:
+  docker:
+    name: docker
+    description: Docker CLI
+    check: req_has_command docker
+    install: whatever

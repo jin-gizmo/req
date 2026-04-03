@@ -1,0 +1,15 @@
+$schema: https://github.com/jin-gizmo/req/releases/latest/download/req.schema.yaml
+
+name: req-bad-spec-require-item
+description: A requirement with a bad item.
+
+require:
+
+  - name: bash
+    description: bash
+    check: req_has_command bash
+    install: |
+      echo "This is very surprising"
+      exit 126
+
+  - name: no-check

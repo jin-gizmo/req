@@ -1,0 +1,17 @@
+$schema: https://github.com/jin-gizmo/req/releases/latest/download/req.schema.yaml
+
+name: custom-template
+description: Custom doc template
+
+template:
+  prolog: "\nPrologue\n"
+  epilogue: "Epilogue\n"
+  requirement: "${index} : ${name}\n"
+
+require:
+  - name: req1
+    description: Requirement 1
+    check: "true"
+  - name: req2
+    description: Requirement 2
+    check: "true"

@@ -1,0 +1,10 @@
+$schema: https://github.com/jin-gizmo/req/releases/latest/download/req.schema.yaml
+
+name: bad-spec-script-error
+description: Shell script syntax error
+
+require:
+  - name: script-error
+    description: Shell script syntax error
+    check: "[["
+    install: whatever

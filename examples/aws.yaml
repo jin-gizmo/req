@@ -1,0 +1,21 @@
+$schema: https://github.com/jin-gizmo/req/releases/latest/download/req.schema.yaml
+
+name: aws
+description: AWS related utilities
+
+require:
+  - name: aws-cli-v2
+    description: AWS CLI v2
+    check: req_has_command aws && req_version_eq 2 "$(aws --version | req_extract_version)"
+    # AWS has made a mess of this whole process now.
+    install: |
+      echo "See instructions at https://docs.aws.amazon.com/cli/latest/userguide/getting-started-install.html"
+      exit 126
+
+  - name: aws-sam-cli
+    description: AWS SAM CLI
+    check: req_has_command aws && req_has_command sam
+    # Ditto for installing sam
+    install: |
+      echo "See instructions at https://docs.aws.amazon.com/serverless-application-model/latest/developerguide/install-sam-cli.html"
+      exit 126

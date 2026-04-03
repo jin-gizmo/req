@@ -1,0 +1,38 @@
+$schema: https://github.com/jin-gizmo/req/releases/latest/download/req.schema.yaml
+
+name: multi
+description: Multiple requirements
+
+require:
+  - name: docker
+    description: Docker CLI
+    check: req_has_command docker
+    install: |
+      echo "See https://www.docker.com/get-started/"
+      exit 126
+
+  - name: bash
+    description: bash
+    if: "true"
+    check: req_has_command bash
+    install: |
+      echo "This is very surprising"
+      exit 126
+
+  - name: optional-no-exist
+    description: Optional requirement that does not exist
+    optional: true
+    check: "false"
+    install: "false"
+
+  - name: optional-exist
+    description: Optional requirement that does exist
+    optional: true
+    check: "true"
+    install: "false"
+
+  - name: if-not-satisfied
+    description: If condition not satisfied
+    if: "false"
+    check: "does not matter"
+    install: "does not matter"

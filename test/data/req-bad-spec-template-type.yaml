@@ -1,0 +1,16 @@
+$schema: https://github.com/jin-gizmo/req/releases/latest/download/req.schema.yaml
+
+name: req-bad-spec-template-type
+description: Document template is not a mapping
+
+template:
+  - one
+  - two
+
+require:
+  - name: bash
+    description: bash
+    check: req_has_command bash
+    install: |
+      echo "This is very surprising"
+      exit 126

@@ -1,0 +1,28 @@
+$schema: https://github.com/jin-gizmo/req/releases/latest/download/req.schema.yaml
+
+name: install-simple
+description: Simple installation by touching a file
+
+require:
+  - name: touch
+    description: Touch a file named in TEST_FILE env var to install
+    check: |
+      [ "$TEST_FILE" == "" ] && echo "You forgot to set TEST_FILE" && exit 1
+      req_has_file "$TEST_FILE"
+    install: |
+      [ "$TEST_FILE" == "" ] && echo "You forgot to set TEST_FILE" && exit 1
+      touch "$TEST_FILE"
+      ls -l "$TEST_FILE"
+
+  - name: already-installed
+    description: This is already installed
+    check: "true"
+    install: |
+      echo "This should never run"
+      exit 1
+
+  - name: optional-no-exist
+    description: Optional requirement that does not exist
+    optional: true
+    check: "false"
+    install: "false"

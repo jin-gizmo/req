@@ -1,0 +1,32 @@
+$schema: https://github.com/jin-gizmo/req/releases/latest/download/req.schema.yaml
+
+name: aspell
+description: Open source spell checker (http://aspell.net)
+
+require:
+  - name: aspell
+    description: Open source spell checker (http://aspell.net)
+    check: req_has_command aspell
+    install: |
+      case "$REQ_FAMILY"
+      in
+        darwin)
+                brew install aspell
+                ;;
+        debian)
+                sudo apt update
+                sudo apt install aspell aspell-en
+                ;;
+        fedora)
+                sudo dnf install aspell aspell-en
+                ;;
+        arch)
+                sudo pacman -S aspell aspell-en
+                ;;
+        alpine)
+                sudo apk add aspell aspell-in
+                ;;
+        *)
+                echo "Try searching your distro package manager index for \"aspell\""
+                ;;
+      esac

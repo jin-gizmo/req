@@ -1,0 +1,9 @@
+$schema: https://github.com/jin-gizmo/req/releases/latest/download/req.schema.yaml
+
+name: install-no-script
+description: Requires installation but no script available
+
+require:
+  - name: install-no-script
+    description: Needs install but no install script
+    check: "false"

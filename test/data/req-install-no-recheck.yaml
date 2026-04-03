@@ -1,0 +1,10 @@
+$schema: https://github.com/jin-gizmo/req/releases/latest/download/req.schema.yaml
+
+name: install-no-recheck
+description: Install fail but no recheck
+
+require:
+  - name: install-no-recheck
+    description: Install no recheck
+    check: "false"
+    install: "exit 126"

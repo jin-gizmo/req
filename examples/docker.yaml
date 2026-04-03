@@ -1,0 +1,12 @@
+$schema: https://github.com/jin-gizmo/req/releases/latest/download/req.schema.yaml
+
+name: docker
+description: Docker
+
+require:
+  - name: docker
+    description: Docker CLI
+    check: req_has_command docker
+    install: |
+      echo "See https://www.docker.com/get-started/"
+      exit 126

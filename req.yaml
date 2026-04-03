@@ -1,0 +1,64 @@
+name: req
+description: Pre-requisites for working with the req repo.
+
+require:
+  - name: aspell
+    description: Open source spell checker (http://aspell.net)
+    check: req_has_command aspell
+    install: |
+      case "$REQ_FAMILY"
+      in
+        darwin)
+                echo "Try ..."
+                echo "    brew install aspell"
+                ;;
+        debian)
+                echo "Try ..."
+                echo "    sudo apt update"
+                echo "    sudo apt install aspell aspell-en"
+                ;;
+        fedora)
+                echo "Try ..."
+                echo "    sudo dnf install aspell aspell-en"
+                ;;
+        arch)
+                echo "Try ..."
+                echo "    sudo pacman -S aspell aspell-en"
+                ;;
+        alpine)
+                echo "Try ..."
+                echo "    sudo apk add aspell aspell-in"
+                ;;
+        *)
+                echo "Try searching your distro package manager index for \"aspell\""
+                ;;
+      esac
+      # Don't recheck after install
+      exit 126
+
+  - name: gh
+    description: GitHub CLI
+    check: req_has_command gh
+    install: |
+      case "$REQ_OS"
+      in
+        darwin)
+                echo "Try ..."
+                echo "    brew install gh"
+                ;;
+        linux)
+                echo "See https://github.com/cli/cli?tab=readme-ov-file#linux--unix"
+                exit 126
+                ;;
+        *)
+                echo "Don't know how to install gh on ${REQ_OS}. You're on your own, sorry."
+                exit 1
+                ;;
+      esac
+
+  - name: docker
+    description: Docker CLI (Required for testing)
+    check: req_has_command docker
+    install: |
+      echo "See https://www.docker.com/get-started/"
+      exit 126
