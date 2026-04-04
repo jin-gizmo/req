@@ -1,4 +1,4 @@
-personal_ws-1.1 en 43 
+personal_ws-1.1 en 47 
 CLI
 Distro
 Doco
@@ -8,8 +8,10 @@ Jetbrains
 Jin
 JinReq
 Jinja
+MakeHelp
 PyPI
 README
+Repo
 Req
 TOCmark
 YAML
@@ -26,6 +28,7 @@ dnf
 endeavouros
 linux
 macOS
+makefile
 makefiles
 manjaro
 ok
@@ -33,6 +36,7 @@ ol
 opensuse
 pyyaml
 raspbian
+repo
 req
 rhel
 stderr
